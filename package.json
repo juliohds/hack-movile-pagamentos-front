@@ -1,0 +1,25 @@
+{
+  "name": "hack-movile-pagamentos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0"
+  },
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juliohds/hack-movile-pagamentos.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juliohds/hack-movile-pagamentos/issues"
+  },
+  "homepage": "https://github.com/juliohds/hack-movile-pagamentos#readme"
+}
