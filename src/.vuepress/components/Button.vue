@@ -20,7 +20,7 @@ export default {
     border-radius: 10px;
     box-shadow:  0px 0px 6px 0px rgba(0, 0, 0, 0.17),
                  0px 2px 15px 0px rgba(0, 0, 0, 0.12);
-
+    text-align: center;
     font-size: 20px;
   }
 </style>
