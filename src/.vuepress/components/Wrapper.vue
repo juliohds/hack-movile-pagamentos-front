@@ -7,6 +7,7 @@
 
 <style module>
   .wrapper {
+    position: relative;
     padding-left: 20px;
     padding-right: 20px;
   }

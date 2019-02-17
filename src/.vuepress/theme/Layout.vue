@@ -1,10 +1,9 @@
 <template>
   <div class="app_wrapper">
-    <Header ref="header" />
-    <Wrapper :style="{ height: $page.frontmatter.content.height, overflow: 'scroll' }">
+    <Header />
+    <Wrapper :style="{ height: '100%', overflow: 'scroll' }">
       <Content />
     </Wrapper>
-    <Footer ref='footer' />
   </div>
 </template>
 
@@ -25,6 +24,8 @@ export default {
 </script>
 
 <style lang="scss">
+  @import url('https://fonts.googleapis.com/css?family=Poppins|Roboto');
+
   html, body, #app {
     width: 100%;
     height: 100%;
@@ -39,6 +40,11 @@ export default {
   .app_wrapper {
     margin: auto;
     max-width: 360px;
+    height: 100%;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
   }
 </style>
 

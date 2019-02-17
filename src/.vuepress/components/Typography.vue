@@ -1,5 +1,5 @@
 <template>
-  <component :is='tag' :class='[$style.heading, $style[tag]]'> 
+  <component :is='tag' :class='[$style.typography, $style[tag], $style[size], $style[type]]'> 
     <slot />
   </component>
 </template>
@@ -10,6 +10,16 @@ export default {
     tag: {
       type: String,
       default: 'p'
+    },
+
+    type: {
+      type: String,
+      default: 'none'
+    },
+
+    size: {
+      type: String,
+      default: 'normal'
     }
   },
 
@@ -20,14 +30,34 @@ export default {
 </script>
 
 <style lang="scss" module>
-  .heading {
-    color: white;
+  .typography {
+    color: #424344;
+    font-family: 'Poppins'
   }
 
   .h1 {
-    color: white;
+    // color: white;
   }
   .h2 {
-    color: white;
+    // color: white;
+    font-size: 20px;
+  }
+
+  .p {
+    &.normal {
+      font-size: 14px;
+    }
+    &.large {
+      font-size: 16px;
+    }
+  }
+
+  .special {
+    font-weight: 600;
+  }
+
+  .loja {
+    font-size: 30px !important;
+    font-weight: 600;
   }
 </style>

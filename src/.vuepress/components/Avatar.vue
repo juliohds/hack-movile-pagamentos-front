@@ -1,5 +1,5 @@
 <template>
-  <img :class="[$style.avatar, $style[size]]" />
+  <div :class="[$style.avatar, $style[size]]"> </div>
 </template>
 
 <script>
@@ -19,7 +19,7 @@ export default {
 
 <style lang="scss" module>
   .avatar {
-    background: blue;
+    background: #c1c1c1;
     display: flex;
     border-radius: 100%;
   }
