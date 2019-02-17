@@ -8,10 +8,10 @@
        </span>    Wallet
     </Typography>
     <Typography tag="p" :class="$style.value">
-      <strong>SALDO - R$: 20,00</strong> 
+      <strong>SALDO - R$: {{ saldo }}</strong> 
     </Typography>
     <Typography tag="p" :class="[$style.value, $style.credito]">
-      <strong>CRÉDITO - R$: 30,00</strong>
+      <strong>CRÉDITO - R$: {{ credito }}</strong>
     </Typography>
 
   </Wrapper>
@@ -19,7 +19,18 @@
 
 <script>
 export default {
-  
+  computed: {
+    saldo: {
+      get () {
+        return this.$store.state.saldo
+      }
+    },
+    credito: {
+      get () {
+        return this.$store.state.credito
+      }
+    }
+  }
 }
 </script>
 

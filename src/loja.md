@@ -12,6 +12,7 @@ backButton: true
     <Typography tag="h2" :class="$style.title"> X-Tudo </Typography>
     <Typography tag="h2" :class="$style.value"> R$ 20,00 </Typography>
   </div>
+
   <Button :class="$style.button" @click.native="showModal"> COMPRAR </Button>
 
   <div v-if="modal" :class="$style.modal"> 
@@ -24,18 +25,26 @@ backButton: true
         <p :class="$style.title"> Parece que você está sem <strong> saldo </strong>, que tal usar nosso <strong> crédito </strong>? </p>
         <p :class="$style.title"> Você pega: <strong> R$ 20 </strong> </p>
         <p :class="$style.title"> E no proximo mes, paga: <strong> R$ 21,2 </strong> </p>
-        <h3 :class="$style.title"> Acreditas </h3>
-        <Button> ACEITO </Button>
+        <h3 :class="$style.logo"> Acreditas </h3>
+        <Button @click.native="acceptTransaction"> ACEITO </Button>
       </div>
     </div>
   </div>
-
-  <div></div>
 
 </template>
 
 <script>
   export default {
+    computed: {
+      credito: {
+        get () {
+          return this.$store.state.credito
+        },
+        set (value) {
+          this.$store.commit('atualizarCredito', value)
+        }
+      }
+    },
     data () {
       return {
         modal: false
@@ -49,7 +58,16 @@ backButton: true
 
       hideModal () {
         this.modal = false
+      },
+
+      acceptTransaction () {
+        this.credito -= 20
+        this.$router.push('/')
       }
+    },
+
+    mounted () {
+      console.log(this.$store)
     }
   }
 </script>
@@ -132,4 +150,9 @@ backButton: true
   font-size: 18px;
 }
 
+.logo {
+  margin: 0 0 30px 0;
+  text-align: right;
+  letter-spacing: 1px;
+}
 </style>
