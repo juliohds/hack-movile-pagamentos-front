@@ -6,7 +6,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     saldo: 0,
-    credito: 100
+    credito: 0
   },
   mutations: {
     atualizarCredito (state, payload) {
